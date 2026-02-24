@@ -40,7 +40,7 @@ export const verifyEmail = async (req: Request, res: Response) => {
     user.isVerified = true;
     user.verificationToken = undefined;
     await user.save();
-
+ 
     res.json({ message: "Email verified successfully. You can now login." });
   } catch (err: any) {
     res.status(400).json({ error: err.message });
